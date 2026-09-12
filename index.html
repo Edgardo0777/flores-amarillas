@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Para ti, preciosa 🌻</title>
+<style>
+:root{
+  --yellow:#ffd84a; --gold:#f2b632; --red:#e21f26; --deep:#090909;
+  --cream:#fff9df; --paper:#fffdf4; --ink:#29251d;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:Georgia,"Times New Roman",serif;overflow-x:hidden}
+button{font:inherit}
+#petals{position:fixed;inset:0;pointer-events:none;z-index:20;overflow:hidden}
+.petal{position:absolute;top:-30px;font-size:22px;animation:fall linear forwards;opacity:.85}
+@keyframes fall{to{transform:translate3d(var(--drift),110vh,0) rotate(500deg);opacity:0}}
+.hero{
+  min-height:100svh;display:grid;place-items:center;text-align:center;position:relative;
+  padding:34px 22px;overflow:hidden;
+  background:
+    radial-gradient(circle at 50% 45%, rgba(255,255,255,.55), transparent 34%),
+    linear-gradient(145deg,#ffe878,#ffd23f 52%,#f0b52c);
+}
+.hero:before,.hero:after{content:"🌻";position:absolute;font-size:90px;opacity:.18;filter:blur(.2px)}
+.hero:before{left:-15px;top:9%}.hero:after{right:-15px;bottom:8%;transform:rotate(18deg)}
+.hero-card{position:relative;z-index:2;max-width:650px}
+.eyebrow{letter-spacing:4px;text-transform:uppercase;font:700 12px/1.2 Arial,sans-serif;color:#704f00;margin-bottom:18px}
+h1{font-size:clamp(48px,12vw,88px);line-height:.9;margin:0 0 18px;color:#7c5200;text-shadow:0 3px 0 rgba(255,255,255,.35)}
+.subtitle{font-size:clamp(19px,4.8vw,27px);line-height:1.35;margin:0 auto 30px;max-width:530px}
+.cta{
+  border:0;background:var(--red);color:white;padding:15px 24px;border-radius:999px;
+  font:bold 16px Arial,sans-serif;box-shadow:0 9px 0 #9f1116;cursor:pointer;
+  transition:.2s transform,.2s box-shadow
+}
+.cta:active{transform:translateY(6px);box-shadow:0 3px 0 #9f1116}
+.music{position:fixed;right:14px;top:14px;z-index:30;border:2px solid rgba(255,255,255,.7);
+  background:#111;color:#fff;border-radius:999px;padding:10px 14px;font:700 12px Arial,sans-serif;box-shadow:0 5px 20px #0003}
+.section{padding:74px 18px;position:relative}
+.wrap{width:min(760px,100%);margin:auto}
+.letter-card{
+  background:var(--paper);border:1px solid #eadcae;border-radius:24px;padding:30px 22px;
+  box-shadow:0 18px 45px #6d4b0018;position:relative;overflow:hidden
+}
+.letter-card:before{content:"🌻";position:absolute;right:-18px;top:-25px;font-size:100px;opacity:.12}
+h2{font-size:clamp(30px,8vw,48px);text-align:center;margin:0 0 28px;color:#8b5a00}
+p{font-size:18px;line-height:1.75;margin:0 0 19px}
+strong{color:#b0181d}
+.divider{height:1px;background:linear-gradient(90deg,transparent,#e3c65b,transparent);margin:30px 0}
+.media{margin:30px 0;border-radius:22px;overflow:hidden;box-shadow:0 14px 40px #0002;background:#111}
+.media img,.media video{width:100%;display:block;max-height:72svh;object-fit:cover}
+.caption{text-align:center;font:700 13px Arial,sans-serif;letter-spacing:1px;text-transform:uppercase;color:#8b5a00;margin:12px 0 0}
+.eyes{
+  background:#090909;color:white;min-height:90svh;display:grid;place-items:center;overflow:hidden;
+  padding:70px 18px;position:relative
+}
+.eyes:before{content:"";position:absolute;width:80vw;height:80vw;max-width:600px;max-height:600px;border-radius:50%;
+  background:radial-gradient(circle,#ef2727 0 5%,#6c0808 6% 12%,transparent 13%);opacity:.17;filter:blur(5px)}
+.eyes .wrap{position:relative;z-index:2}
+.eyes h2{color:#ff3030;text-shadow:0 0 25px #f00a}
+.eyes p{color:#eee}
+.eye-frame{border:3px solid #d92329;border-radius:24px;padding:6px;box-shadow:0 0 40px #e11a1a44}
+.eye-frame video{border-radius:18px;max-height:70svh}
+.final{
+  min-height:100svh;display:grid;place-items:center;text-align:center;padding:40px 20px;
+  background:radial-gradient(circle at 50% 35%,#fff7bd,transparent 40%),linear-gradient(#ffd94d,#f4bd2c)
+}
+.final h2{font-size:clamp(42px,11vw,74px);color:#a5141a;margin-bottom:14px}
+.final p{font-size:20px}
+.signature{margin-top:34px;font-size:24px;font-weight:700;color:#8c1b20}
+.small{font:13px/1.5 Arial,sans-serif;color:#6b571f;margin-top:24px}
+.photo-strip{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:25px 0}
+.photo-strip img{width:100%;height:230px;object-fit:cover;border-radius:18px;box-shadow:0 10px 28px #0002}
+@media(max-width:520px){.photo-strip img{height:180px}.letter-card{padding:25px 18px}p{font-size:17px}}
+</style>
+</head>
+<body>
+<div id="petals"></div>
+<button class="music" id="musicBtn">♫ Música</button>
+
+<section class="hero" id="inicio">
+  <div class="hero-card">
+    <div class="eyebrow">Un pequeño detalle desde Ecuador hasta México</div>
+    <h1>Para ti,<br>preciosa 🌻</h1>
+    <p class="subtitle">Porque unas flores amarillas de verdad todavía tienen que esperar… pero estas no. ❤️</p>
+    <button class="cta" onclick="startGift()">Tengo algo para ti, preciosa ❤️</button>
+  </div>
+</section>
+
+<section class="section">
+<div class="wrap">
+<div class="letter-card">
+<h2>🌻 Para ti, preciosa 🌻</h2>
+
+<p>Siendo sincero, creo que a estas alturas ya sabes perfectamente lo que siento por ti. 😂❤️</p>
+<p>Así que esta carta no es para confesarte algo que no sepas. Es simplemente porque soy yo, y ya sabes que contigo me pongo demasiado romántico y cursi. 😂</p>
+
+<div class="divider"></div>
+<p>Después de tantos años de conocernos, a veces me pongo a pensar en todo lo que hemos vivido y en cómo terminamos llegando hasta aquí.</p>
+<p>Porque sí... durante muchísimo tiempo me gustaste.</p>
+<p>Siempre hubo algo diferente contigo. Siempre te traté de una manera especial, aunque durante años nunca me atreví a decirte todo lo que realmente pensaba y sentía.</p>
+<p>Hasta que hace un tiempo finalmente me atreví.</p>
+<p>Y desde ese momento siento que entre nosotros cambió algo.</p>
+<p>Pasamos de ser amigos de tantos años a tener una conexión que, sinceramente, ya no sé ni cómo explicar. 😂❤️</p>
+<p>Nos decimos cosas bonitas, nos decimos “te amo”, nos tratamos como si fuéramos algo más y terminamos cruzando todos los límites que probablemente ninguno de los dos imaginaba cuando empezamos a conocernos.</p>
+<p>Y ¿sabes qué?</p>
+<p><strong>Me encanta.</strong></p>
+<p>Me encanta la confianza que tenemos, la forma en que nos tratamos y esa manera tan nuestra de estar presentes el uno para el otro.</p>
+<p>No sé exactamente qué nombre ponerle a lo nuestro, pero tampoco siento que necesitemos hacerlo.</p>
+<p>Para mí eres alguien demasiado especial.</p>
+
+<div class="photo-strip">
+  <img src="ella_1.jpg" alt="Una foto especial">
+  <img src="ella_2.jpg" alt="Otra foto especial">
+</div>
+
+<p class="caption">Cuatro años de conocernos y todavía aquí ❤️</p>
+</div>
+</div>
+</section>
+
+<section class="eyes">
+<div class="wrap">
+  <h2>👁️ Tus ojitos preciosos ❤️</h2>
+  <p>Y obviamente no podía hacerte algo así sin hablar de tus <strong>ojitos preciosos</strong>.</p>
+  <p>Ya sé que probablemente estás cansada de que te diga que son preciosos 😂, pero qué culpa tengo yo de que sean tan bonitos.</p>
+  <p>Además, si tengo la oportunidad de recordártelo, la voy a aprovechar.</p>
+  <p style="text-align:center;font-size:25px"><strong>Tienes unos ojitos preciosos, preciosa.</strong></p>
+
+  <div class="media eye-frame">
+    <video src="video_ojos.mp4" controls playsinline preload="metadata"></video>
+  </div>
+  <p style="text-align:center;color:#ffb0b0">Este video tiene un lugar especial aquí. ❤️</p>
+</div>
+</section>
+
+<section class="section">
+<div class="wrap">
+<div class="letter-card">
+<p>Y probablemente mañana te lo vuelva a decir.</p>
+<p>Y pasado mañana también.</p>
+<p>Porque contigo nunca me voy a cansar de decirte las cosas bonitas que pienso de ti. ❤️</p>
+
+<p>🌻 <strong>Y hoy quería darte flores amarillas.</strong></p>
+<p>Pero tenemos un pequeño problema...</p>
+<p>Tú estás en México y yo estoy en Ecuador. 😭😂</p>
+<p>Así que por ahora me tocó buscar otra manera de hacerte llegar las tuyas.</p>
+<p>Quizás estas flores sean virtuales, pero el cariño con el que te las estoy dando no lo es.</p>
+<p>Quería hacer algo para ti porque simplemente me nació hacerlo.</p>
+<p>Porque eres tú.</p>
+<p>Porque después de tantos años sigues siendo esa persona que consigue hacerme sentir un montón de cosas.</p>
+<p>Y porque, aunque estemos lejos, quería encontrar una manera de hacerte sonreír aunque fuera desde aquí.</p>
+
+<div class="media"><img src="ojos_1.jpg" alt="Tus ojitos preciosos"></div>
+
+<p>Así que estas flores son para ti, preciosa. 🌻❤️</p>
+<p>Y algún día, cuando pueda darte unas flores amarillas de verdad, espero poder ver tus ojitos mientras te las entrego.</p>
+<p>Esas ya no van a ser virtuales.</p>
+<p>Y probablemente en ese momento vuelva a decirte lo mismo que te digo siempre:</p>
+<p style="text-align:center"><strong>qué preciosos son tus ojitos. 😂❤️</strong></p>
+
+<div class="divider"></div>
+<p>Pero hay algo más que quiero decirte.</p>
+<p>Si hay algo que deseo de todo esto que tenemos, es que ojalá no sea algo que simplemente pase con el tiempo.</p>
+<p><strong>Quiero que dure.</strong></p>
+<p>Quiero que pasen los años y que podamos mirar hacia atrás y acordarnos de todo esto con una sonrisa.</p>
+<p>Quiero seguir diciéndote preciosa, seguir molestándote con tus ojitos, seguir diciéndote lo mucho que me encantan y probablemente seguir repitiéndote lo mismo aunque ya te lo haya dicho mil veces. 😂❤️</p>
+<p>Quiero seguir amándote mientras la vida nos siga dando momentos para compartir.</p>
+<p>Y si algún día pasan muchísimos años y me preguntas si todavía me parecen preciosos tus ojitos, espero poder mirarte y decirte que sí.</p>
+<p>Porque quiero que esos ojitos sigan siendo de las cosas que más me gustan de ti durante muchísimo, muchísimo tiempo.</p>
+<p>Y si me preguntas hasta cuándo quiero seguir haciéndolo...</p>
+<p style="text-align:center;font-size:24px"><strong>Hasta que mis propios ojos dejen de mirar. ❤️</strong></p>
+<p>Porque mientras pueda <strong>amarte, voy a amarte.</strong></p>
+<p>Mientras pueda decirte preciosa, voy a decírtelo.</p>
+<p>Y mientras pueda mirar tus ojitos, voy a seguir diciéndote lo preciosos que son.</p>
+
+<div class="divider"></div>
+<p>Gracias por estos cuatro años.</p>
+<p>Por todo lo que hemos vivido, por todas las conversaciones, por las risas, por la confianza y por todas esas cosas que hicieron que termináramos siendo lo que somos ahora.</p>
+<p>No sé qué nos depare el futuro ni qué nombre tendrá lo nuestro.</p>
+<p>Pero sí sé que <strong>te amo muchísimo</strong>, que me encantas y que eres una persona que ocupa un lugar muy especial en mi vida. ❤️</p>
+</div>
+</div>
+</section>
+
+<section class="final">
+<div>
+  <div style="font-size:70px">🌻❤️🌻</div>
+  <h2>Te amo, preciosa. ❤️</h2>
+  <p>🌻 Feliz día de las flores amarillas. 🌻</p>
+  <div class="signature">El loco tuyo, mi amor. ❤️</div>
+  <div class="small">Hecho desde Ecuador, para ti en México.</div>
+</div>
+</section>
+
+<script>
+let started=false;
+function petals(){
+  const box=document.getElementById('petals');
+  for(let i=0;i<22;i++){
+    const s=document.createElement('span'); s.className='petal';
+    s.textContent=Math.random()>.35?'🌻':'❤️';
+    s.style.left=(Math.random()*100)+'vw';
+    s.style.setProperty('--drift',((Math.random()-.5)*30)+'vw');
+    s.style.animationDuration=(5+Math.random()*6)+'s';
+    s.style.animationDelay=(Math.random()*4)+'s';
+    box.appendChild(s);
+    setTimeout(()=>s.remove(),13000);
+  }
+}
+function startGift(){
+  started=true; petals();
+  document.getElementById('inicio').scrollIntoView({behavior:'smooth'});
+  const btn=document.getElementById('musicBtn');
+  btn.textContent='♫ Música (añadir después)';
+}
+document.getElementById('musicBtn').onclick=()=>alert('Aquí pondremos “Por Esos Ojos” cuando tengamos una fuente de audio que puedas usar legalmente. ❤️');
+setInterval(petals,8500);
+</script>
+</body>
+</html>
